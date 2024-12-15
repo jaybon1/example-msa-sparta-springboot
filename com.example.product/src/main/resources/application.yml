@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: product-service
+  config:
+    import: "configserver:http://localhost:19000"
+  cloud:
+    config:
+      name: product-service
+      profile: dev
+      fail-fast: true
+
+
+# config를 eureka에서 가져오지 않음
+#spring:
+#  config:
+#    import: "configserver:"
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server
